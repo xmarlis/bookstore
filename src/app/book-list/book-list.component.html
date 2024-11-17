@@ -1,0 +1,37 @@
+<h1>Book List</h1>
+
+<div class="book-list">
+  @for (book of books; track $index) {
+    <div class="book-item">
+      <img src="{{ book.image }}" alt="Book Image" class="book-image">
+      <h3>{{ book.title }}</h3>
+      
+      @if (book.description) {
+        <p class="book-description">{{ book.description }}</p>
+      } @else {
+        <p class="book-description">This product has no description yet.</p>
+      }
+      
+      <a class="btn btn-warning" routerLink="/details/{{$index}}">Details</a>
+    </div>
+  }
+</div>
+
+
+
+<!-- <h1>Book list</h1>
+
+@for (book of books; track $index) {
+<h3>{{ book.title }}</h3>
+
+@if (book.description) {
+<p>{{ book.description }}</p>
+} @else {
+<p>This product have no description yet</p>
+}
+
+<a class="btn btn-warning" routerLink="/details/{{$index}}">Details</a>
+<hr>
+} -->
+
+<!-- <p>{{$index}}</p> -->

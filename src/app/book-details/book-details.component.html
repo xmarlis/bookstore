@@ -1,0 +1,36 @@
+<h1>Book Details</h1>
+
+<div class="book-details">
+  <div class="book-image">
+    <img src="{{ book.image }}" alt="Image not found">
+  </div>
+  
+  <div class="book-info">
+    <h2>{{ book.title }}</h2>
+    <h4>{{ book.author }}</h4>
+    <h4>{{ book.price }}</h4>
+
+    @if (book.description) {
+      <p>{{ book.description }}</p>
+    } @else {
+      <p>No description for this product yet.</p>
+    }
+
+    <button (click)="addToCart()" class="btn btn-primary">Add to Cart</button>
+  </div>
+</div>
+
+
+<!-- <h1>Book Details</h1>
+
+<h2>{{ book.title }}</h2>
+<h4>{{ book.author }}</h4>
+<h4>{{ book.price }}</h4>
+<img src="{{ book.image }}" alt="image not found" />
+@if (book.description) {
+<p>{{ book.description }}</p>
+}@else {
+<p>No description for this product yet</p>
+}
+
+<button (click)="addToCart()" class="btn btn-primary">Add to cart</button> -->

@@ -1,0 +1,146 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Page Header */
+  h1 {
+    text-align: center;
+    color: #333;
+    padding: 20px;
+    background-color: #ffcc00;
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  
+  /* Book Details Layout */
+  .book-details {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .book-image img {
+    width: 100%;
+    height: auto;
+    max-width: 400px; /* Limit image size */
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .book-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  h4 {
+    color: #555;
+    font-size: 1.2rem;
+    margin: 5px 0;
+  }
+  
+  p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    padding: 12px 18px;
+    background-color: #ffcc00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px;
+    margin-top: 20px;
+  }
+  
+  .btn:hover {
+    background-color: #ffb300;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .book-details {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .book-image img {
+      max-width: 80%;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    h2 {
+      font-size: 1.8rem;
+    }
+  
+    h4 {
+      font-size: 1rem;
+    }
+  
+    .btn {
+      width: 150px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    .book-details {
+      margin: 20px;
+    }
+  
+    .book-info {
+      padding: 10px;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    h4 {
+      font-size: 0.9rem;
+    }
+  
+    p {
+      font-size: 0.9rem;
+    }
+  
+    .btn {
+      width: 120px;
+    }
+  }
+  
+
+
+/* img {
+    height: 30vh;
+} */

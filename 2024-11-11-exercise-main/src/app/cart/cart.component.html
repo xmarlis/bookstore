@@ -1,0 +1,33 @@
+@for (item of cart; track $index) {
+<p>{{ item.title }}</p>
+<p>{{ item.price }}</p>
+<p>Quantity: {{ item.quantity || 1 }}</p>
+<button (click)="increaseQuantity(item)">+</button>
+<button (click)="decreaseQuantity(item)">-</button>
+<button (click)="removeItem(item)">Delete</button>
+<hr />
+} @empty {
+<p>Cart is empty :(</p>
+}
+
+<div class="cart-total">
+  <strong>Total: {{ totalAmount | currency : "EUR" }}</strong>
+</div>
+
+<hr />
+
+<form [formGroup]="checkOut" (ngSubmit)="checkOutFunction()">
+  <input
+    type="text"
+    placeholder="Full name"
+    formControlName="fullName"
+    class="form-control"
+  />
+  <input
+    type="text"
+    placeholder="Address"
+    formControlName="address"
+    class="form-control mt-2"
+  />
+  <input type="submit" value="Check out" class="btn btn-secondary mt-2" />
+</form>

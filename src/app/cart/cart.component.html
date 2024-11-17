@@ -1,0 +1,82 @@
+<h1>Your Cart</h1>
+
+<div class="cart-items">
+  @for (item of cart; track $index) {
+  <div class="cart-item">
+    <!-- Display Book Title and Price -->
+    <div class="cart-item-details">
+      <p class="cart-item-title">{{ item.title }}</p>
+      <p class="cart-item-price">{{ item.price | currency: "EUR" }}</p>
+      <p class="cart-item-quantity">Quantity: {{ item.quantity || 1 }}</p>
+
+      <!-- Buttons to increase, decrease quantity, and remove item -->
+      <div class="cart-item-actions">
+        <button (click)="increaseQuantity(item)" class="btn btn-success">+</button>
+        <button (click)="decreaseQuantity(item)" class="btn btn-danger">-</button>
+        <button (click)="removeItem(item)" class="btn btn-warning">Delete</button>
+      </div>
+    </div>
+
+    <!-- Display Book Image -->
+    <img src="{{ item.image }}" alt="Book Image" class="cart-item-image" />
+  </div>
+  <hr />
+  }
+  @empty {
+    <p>Cart is empty </p>
+  }
+</div>
+
+<div class="cart-total">
+  <strong>Total: {{ totalAmount | currency : "EUR" }}</strong>
+</div>
+
+<hr />
+
+<!-- Checkout Form -->
+<form [formGroup]="checkOut" (ngSubmit)="checkOutFunction()">
+  <input type="text" placeholder="Full name" formControlName="fullName" class="form-control" />
+  <input type="text" placeholder="Address" formControlName="address" class="form-control mt-2" />
+  <input type="submit" value="Check out" class="btn btn-secondary mt-2" />
+</form>
+
+
+<!-- <h1>Your Cart</h1>
+
+<div class="cart-items">
+  
+
+@for (item of cart; track $index) {
+<p>{{ item.title }}</p>
+<p>{{ item.price }}</p>
+<p>Quantity: {{ item.quantity || 1 }}</p>
+<button (click)="increaseQuantity(item)">+</button>
+<button (click)="decreaseQuantity(item)">-</button>
+<button (click)="removeItem(item)">Delete</button>
+<hr />
+} @empty {
+<p>Cart is empty :(</p>
+}
+</div>
+
+<div class="cart-total">
+  <strong>Total: {{ totalAmount | currency : "EUR" }}</strong>
+</div>
+
+<hr />
+
+<form [formGroup]="checkOut" (ngSubmit)="checkOutFunction()">
+  <input
+    type="text"
+    placeholder="Full name"
+    formControlName="fullName"
+    class="form-control"
+  />
+  <input
+    type="text"
+    placeholder="Address"
+    formControlName="address"
+    class="form-control mt-2"
+  />
+  <input type="submit" value="Check out" class="btn btn-secondary mt-2" />
+</form> -->
